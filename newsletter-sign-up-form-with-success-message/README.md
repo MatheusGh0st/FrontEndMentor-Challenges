@@ -15,4 +15,4 @@ You may also see any lint errors in the console.
 
 ### PROJECT FINAL IMAGE
 
-`[FINAL IMAGE]`(design/desktop-design.jpg)
+`[FINAL IMAGE]`(./design/desktop-design.jpg)
