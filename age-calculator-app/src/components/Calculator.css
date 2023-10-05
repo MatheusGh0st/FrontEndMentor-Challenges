@@ -1,0 +1,187 @@
+:root {
+    --white: hsl(0, 0%, 100%);
+    --off-white: hsl(0, 0%, 94%);
+    --light-grey: hsl(0, 0%, 86%);
+    --smokey-grey: hsl(0, 1%, 44%);
+    --off-black: hsl(0, 0%, 8%);
+    --purple: hsl(259, 100%, 65%);
+    --light-red: hsl(0, 100%, 67%);
+}
+
+@font-face {
+    font-family: PoppinsBold;
+    src: url("../assets/fonts/Poppins-Bold.ttf");
+}
+
+@font-face {
+    font-family: PoppinsBold;
+    src: url("../assets/fonts/Poppins-Bold.ttf");
+}
+
+@font-face {
+    font-family: PoppinsBoldItalic;
+    src: url("../assets/fonts/Poppins-BoldItalic.ttf");
+}
+
+@font-face {
+    font-family: PoppinsExtraBold;
+    src: url("../assets/fonts/Poppins-ExtraBold.ttf");
+}
+
+@font-face {
+    font-family: PoppinsExtraBoldItalic;
+    src: url("../assets/fonts/Poppins-ExtraBoldItalic.ttf");
+}
+
+@font-face {
+    font-family: PoppinsItalic;
+    src: url("../assets/fonts/Poppins-Italic.ttf");
+}
+
+@font-face {
+    font-family: PoppinsRegular;
+    src: url("../assets/fonts/Poppins-Regular.ttf");
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.calculator-container {
+    position: absolute;
+    background-color: white;
+    border-radius: 10px 10px 100px 10px;
+    width: 530px;
+    height: 420px;
+    top: 50%;
+    left: 50%;
+    padding: 10px 5px 10px 10px;
+    margin: 10px 5px 10px 10px;
+    transform: translate(-50%, -50%);
+}
+
+hr {
+    border: none;
+    border-top: 0.5px solid var(--light-grey);
+    width: 100%;
+}
+
+.calculator-card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: stretch;
+    margin: 10px 10px 0px 10px;
+}
+
+.icon-card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: stretch;
+    margin: 0px 40px 0px 20px;
+}
+
+.img-icon-arrow {
+    background-color: var(--purple);
+    width: 60px;
+    padding: 15px;
+    border-radius: 30px;
+}
+
+.img-icon-arrow:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.result-card {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0px 10px 10px 10px;
+    padding: 0px 10px 10px 10px;
+}
+
+.age-result {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: stretch;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.date-result {
+    font-family: PoppinsExtraBoldItalic;
+    margin-top: 10px;
+    font-size: 4rem;
+    line-height: 1;
+}
+
+.date-card {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: normal;
+    align-content: normal;
+    padding: 10px 10px 0px 10px;
+}
+
+.date-label {
+    font-family: PoppinsBold;
+    color: var(--smokey-grey);
+    margin-bottom: 0.3rem;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.date-input {
+    height: 50px;
+    width: 100px;
+    border-radius: 10px;
+    padding: 0.8rem 1rem;
+    border: none;
+    border: 0.5px solid var(--light-grey);
+    outline: none;
+    font-size: 1.2rem;
+    font-family: PoppinsBold;
+    color: black;
+}
+
+.date-value {
+    font-weight: bold;
+    color: var(--purple);
+}
+
+.date-result p::placeholder {
+    color: gray;
+}
+
+::placeholder {
+    color: var(--smokey-grey);
+}
+
+.date-input:focus {
+    border: 1px solid var(--purple);
+}
+
+@media (max-width: 480px) {
+    .calculator-container {
+        position: relative;
+        max-width: 100vh;
+        width: 100vh;
+    }
+}
