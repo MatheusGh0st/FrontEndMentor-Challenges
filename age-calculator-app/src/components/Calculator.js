@@ -15,14 +15,18 @@ export default function Calculator() {
         year: '--'
     });
 
-    const [errorMsg, setErrorMsg] = React.useState("");
+    const [errorMsg, setErrorMsg] = React.useState({
+        day: "",
+        month: "",
+        year: "",
+    });
 
     function isInRange(num, min, max) {
         return num >= Math.min(min, max) && num <= Math.max(min, max);
     }
 
     function defineMessagesInvalid(date) {
-        let objMsg = { 
+        const objMsg = { 
             day: "",
             month: "",
             year: ""
@@ -55,27 +59,61 @@ export default function Calculator() {
         });
     }
 
+    function defineMessagesEmpty() {
+        const objMsg = { 
+            day: "",
+            month: "",
+            year: ""
+        }
+
+        const { day, month, year } = formDate;
+
+        if (!day) objMsg.day = "This field is required";
+        if (!month) objMsg.month = "This field is required";
+        if (!year) objMsg.year = "This field is required";
+
+        return objMsg;
+    }
+
+    function isDateEmpty() {
+       if (!formDate.day || !formDate.month || !formDate.year) return true;
+       return false;
+    }
+
     function getResult() {
-        const d = formDate;
-        const dateForm = new Date(`${d.year}/${d.month}/${d.day}`);
-        const currentDate = new Date();
+        
+        if (!isDateEmpty()) {
+            const d = formDate;
+            const dateForm = new Date(`${d.year}/${d.month}/${d.day}`);
+            const currentDate = new Date();
 
-        const timeStampF = dateForm.getTime();
-        const timeStampC = currentDate.getTime();
+            const timeStampF = dateForm.getTime();
+            const timeStampC = currentDate.getTime();
 
-        const difference = timeStampC - timeStampF;
+            const difference = timeStampC - timeStampF;
 
-        if (difference < 0) difference = -difference;
+            if (difference < 0) difference = -difference;
 
-        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-        const months = Math.floor(days / 31);
-        const years = Math.floor(months / 12);
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const months = Math.floor(days / 31);
+            const years = Math.floor(months / 12);
 
-        setDates(_ => {
+            setDates(_ => {
+                return {
+                    day: days % 31,
+                    month: months % 12,
+                    year: years
+                }
+            });
+        }
+        
+        const objError = defineMessagesEmpty();
+        
+        setErrorMsg(_ => {
             return {
-                day: days % 31,
-                month: months % 12,
-                year: years
+                day: objError.day,
+                month: objError.month,
+                year: objError.year
             }
         });
     }
@@ -94,7 +132,7 @@ export default function Calculator() {
                             name="day"
                             value={formDate.day}
                         />
-                        <span className="error-msg">{errorMsg}</span>
+                        <span className="error-msg">{errorMsg.day}</span>
                     </div>
                     <div className="date-card">
                         <label className="date-label">Month</label>
@@ -106,7 +144,7 @@ export default function Calculator() {
                             name="month"
                             value={formDate.month}
                         />
-                        <span></span>
+                        <span className="error-msg">{errorMsg.month}</span>
                     </div>
                     <div className="date-card">
                         <label className="date-label">Year</label>
@@ -118,7 +156,7 @@ export default function Calculator() {
                             name="year"
                             value={formDate.year}
                         />
-                        <span></span>
+                        <span className="error-msg">{errorMsg.year}</span>
                     </div>
                 </div>
 
