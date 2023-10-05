@@ -74,8 +74,8 @@ hr {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
-    align-items: center;
-    align-content: stretch;
+    align-items: flex-start;
+    align-content: flex-start;
     margin: 10px 10px 0px 10px;
 }
 
@@ -129,14 +129,23 @@ hr {
     line-height: 1;
 }
 
+.input-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: center;
+}
+
 .date-card {
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: normal;
-    align-content: normal;
-    padding: 10px 10px 0px 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: center;
+    padding: 10px 10px 10px 10px;
 }
 
 .date-label {
@@ -166,6 +175,21 @@ hr {
     color: var(--purple);
 }
 
+.date-label-error {
+    color: var(--light-red);
+}
+
+.date-input-error {
+    border-color: var(--light-red);
+}
+
+.error-msg {
+    font-family: PoppinsItalic;
+    font-size: 0.7rem;
+    margin-top: 10px;
+    color: var(--light-red);
+}
+
 .date-result p::placeholder {
     color: gray;
 }
@@ -176,6 +200,10 @@ hr {
 
 .date-input:focus {
     border: 1px solid var(--purple);
+}
+
+.date-input-error:focus {
+    border-color: var(--light-red);
 }
 
 @media (max-width: 480px) {
