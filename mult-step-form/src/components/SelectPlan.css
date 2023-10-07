@@ -1,0 +1,200 @@
+:root {
+    --marine-blue: hsl(213, 96%, 18%);
+    --purplish-blue: hsl(243, 100%, 62%);
+    --pastel-blue: hsl(228, 100%, 84%);
+    --light-blue: hsl(206, 94%, 87%);
+    --strawberry-red: hsl(354, 84%, 57%);
+    --cool-gray: hsl(231, 11%, 63%);
+    --light-gray: hsl(229, 24%, 87%);
+    --magnolia: hsl(217, 100%, 97%);
+    --alabaster: hsl(231, 100%, 99%);
+    --white: hsl(0, 0%, 100%);
+}
+
+@font-face {
+    font-family: UbuntuRegular;
+    src: url("../assets/fonts/Ubuntu-Regular.ttf");
+}
+
+@font-face {
+    font-family: UbuntuMedium;
+    src: url("../assets/fonts/Ubuntu-Medium.ttf");
+}
+
+@font-face {
+    font-family: UbuntuBold;
+    src: url("../assets/fonts/Ubuntu-Bold.ttf");
+}
+
+.select-plan-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding: 15px 95px 15px 55px;
+}
+
+.title-subtitle-containter {
+    flex: 2;
+}
+
+.plans-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    margin: 0px;
+    padding: 0px;
+}
+
+p {
+    margin: 0px;
+    font-family: UbuntuRegular;
+    font-size: 0.8rem;
+    color: var(--cool-gray);
+}
+
+span {
+    font-family: UbuntuMedium;
+    font-size: 0.9rem;
+    color: var(--marine-blue);
+}
+
+.mon-year-container > span {
+    padding: 20px;
+    font-size: 0.7rem;
+}
+
+.plan-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: stretch;
+    align-content: stretch;
+    margin: 10px 15px 10px 0px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px;
+    border: 1px solid var(--light-gray);
+    width: 115px;
+    height: 130px;
+}
+
+.plan-container> :first-child {
+    flex-grow: 1;
+    padding-bottom: 30px;
+}
+
+.plan-container:focus {
+    outline: 1px solid var(--purplish-blue);
+}
+
+.plan-container:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.plan-container:active {
+    background-color: var(--light-blue);
+}
+
+img {
+    width: 30px;
+    height: 30px;
+}
+
+.mon-year-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    background-color: var(--alabaster);
+    margin: 10px 0px;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    align-content: flex-end;
+    width: 100%;
+    height: 140px;
+}
+
+.switch-mon-year {
+    position: relative;
+    display: inline-block;
+    width: 35px;
+    height: 20px;
+}
+
+a {
+    font-family: UbuntuRegular;
+    color: var(--cool-gray);
+    margin: 10px 0px 10px 10px;
+    padding: 5px 20px 10px 20px;
+    font-size: 0.9rem;
+}
+
+a:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+
+.switch-mon-year input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--marine-blue);
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: var(--marine-blue);
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px var(--marine-blue);
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(15px);
+    -ms-transform: translateX(15px);
+    transform: translateX(15px);
+}
