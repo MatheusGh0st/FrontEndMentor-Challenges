@@ -6,17 +6,19 @@ export default function PersonalInfo() {
         <div className="personal-info-container">
             <div className="title-subtitle-container">
                 <h1>Personal Info</h1>
-                <p>Please provide your name, email address, and phone number</p>
+                <p>Please provide your name, email address, and phone number.</p>
             </div>
             <div className="form-container">
                 <form className="form">
-                    <label className="label-name">Name</label>
-                    <input className="input-name" type="text"/>
-                    <label className="label-email">Email Address</label>
-                    <input className="input-email" type="text" />
-                    <label className="label-phone">Phone number</label>
-                    <input className="input-phone" type="text" />
+                    <label>Name</label>
+                    <input placeholder="e.g. Stephen King" type="text"/>
+                    <label>Email Address</label>
+                    <input placeholder="e.g. stephenking@lorem.com" type="text" />
+                    <label>Phone number</label>
+                    <input placeholder="e.g. + 1 234 567 890" type="text" />
                 </form>
+            </div>
+            <div className="btn-container">
                 <button className="form-submit">Next Step</button>
             </div>
         </div>
