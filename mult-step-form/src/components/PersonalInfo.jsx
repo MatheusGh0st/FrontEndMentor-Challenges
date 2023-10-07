@@ -19,6 +19,7 @@ export default function PersonalInfo() {
                 </form>
             </div>
             <div className="btn-container">
+                <a>Go Back</a>
                 <button className="form-submit">Next Step</button>
             </div>
         </div>

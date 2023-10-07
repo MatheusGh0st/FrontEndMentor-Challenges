@@ -1,0 +1,81 @@
+:root {
+    --marine-blue: hsl(213, 96%, 18%);
+    --purplish-blue: hsl(243, 100%, 62%);
+    --pastel-blue: hsl(228, 100%, 84%);
+    --light-blue: hsl(206, 94%, 87%);
+    --strawberry-red: hsl(354, 84%, 57%);
+    --cool-gray: hsl(231, 11%, 63%);
+    --light-gray: hsl(229, 24%, 87%);
+    --magnolia: hsl(217, 100%, 97%);
+    --alabaster: hsl(231, 100%, 99%);
+    --white: hsl(0, 0%, 100%);
+}
+
+.pick-add-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding: 15px 95px 15px 50px;
+}
+
+.options-container {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    align-content: flex-start;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.option-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border: 1px solid var(--light-gray);
+    border-radius: 10px;
+    height: 70px;
+    padding: 20px 20px 20px 20px;
+    margin-bottom: 10px;
+}
+
+.option-container:hover {
+    opacity: 0.9;
+    cursor: pointer;
+    background-color: var(--light-blue);
+    outline: 1px solid var(--purplish-blue);
+}
+
+.option-container:active {
+    background-color: var(--light-blue);
+    outline: 1px solid var(--purplish-blue);
+}
+
+.text-option {
+    flex-grow: 1;
+    padding-left: 20px;
+    line-height: 1.3;
+}
+
+.text-option> span {
+    margin: 0px;
+    font-size: 0.8rem;
+}
+
+.text-option> p {
+    margin: 0px;
+    font-size: 0.8rem;
+}
+
+input {
+    margin: 0px;
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+}
