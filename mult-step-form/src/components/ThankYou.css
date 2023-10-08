@@ -1,0 +1,36 @@
+:root {
+    --marine-blue: hsl(213, 96%, 18%);
+    --purplish-blue: hsl(243, 100%, 62%);
+    --pastel-blue: hsl(228, 100%, 84%);
+    --light-blue: hsl(206, 94%, 87%);
+    --strawberry-red: hsl(354, 84%, 57%);
+    --cool-gray: hsl(231, 11%, 63%);
+    --light-gray: hsl(229, 24%, 87%);
+    --magnolia: hsl(217, 100%, 97%);
+    --alabaster: hsl(231, 100%, 99%);
+    --white: hsl(0, 0%, 100%);
+}
+
+.thank-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    padding: 15px 95px 15px 55px;
+}
+
+.img-thank {
+    width: 65px;
+    height: 65px;
+}
+
+.h1-thank {
+    font-size: 2rem;
+    color: var(--marine-blue);
+}
+
+.text-thank {
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
