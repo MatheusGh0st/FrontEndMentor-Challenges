@@ -30,18 +30,18 @@
     padding: 15px 95px 15px 55px;
 }
 
-input[type="text"] {
+.input-form[type="text"] {
     padding: 10px;
 }
 
-.title-subtitle-container>h1 {
+.title-subtitle-container >h1 {
     color: var(--marine-blue);
     font-size: 1.6rem;
     margin-bottom: 10px;
     font-family: UbuntuBold;
 }
 
-.title-subtitle-container>p {
+.title-subtitle-container >p {
     color: var(--cool-gray);
     font-size: 0.8rem;
     margin-top: 0px;
@@ -49,14 +49,14 @@ input[type="text"] {
     font-family: UbuntuRegular;
 }
 
-label {
+.label-form {
     font-family: UbuntuRegular;
     padding: 10px 0px 5px 0px;
     font-size: 0.7rem;
     color: var(--marine-blue);
 }
 
-input {
+.input-form {
     font-family: UbuntuMedium;
     height: 40px;
     font-size: 0.8rem;
@@ -66,11 +66,11 @@ input {
     border: 1px solid var(--light-gray);
 }
 
-input:focus {
+.input-form:focus {
     outline: 1px solid var(--purplish-blue);
 }
 
-input::placeholder {
+.input-form::placeholder {
     color: var(--cool-gray);
 }
 
@@ -90,8 +90,44 @@ input::placeholder {
     height: 110px;
 }
 
+.btn-container-info {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+    align-content: flex-end;
+    height: 110px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.link-go-back-active:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.link-go-back-active {
+    font-family: UbuntuRegular;
+    color: var(--cool-gray);
+    font-size: 0.9rem;
+    padding: 0px;
+    margin: 0px 0px 20px 0px;
+}
+
+.link-go-back-desactive {
+    display: none;
+}
+
+.link-next {
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 10px;
+}
+
 .form-submit {
-    margin: 10px 0px 10px 10px;
     padding: 5px 20px 5px 20px;
     height: 40px;
     border-radius: 10px;
@@ -101,11 +137,28 @@ input::placeholder {
     font-family: UbuntuRegular;
 }
 
-.form-submit:active {
-    box-shadow: inset 0 0 10px hsl(213, 96%, 18%);
-}
-
 .form-submit:hover {
     cursor: pointer;
     opacity: 0.9;
+}
+
+.label-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.span-msg {
+    display: none;
+    font-family: UbuntuRegular;
+    padding: 10px 0px 5px 0px;
+    font-size: 0.7rem;
+}
+
+.error-msg {
+    display: flex;
+    font-family: UbuntuRegular;
+    padding: 10px 0px 5px 0px;
+    font-size: 0.7rem;
+    color: var(--strawberry-red);
 }

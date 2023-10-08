@@ -51,14 +51,14 @@
     padding: 0px;
 }
 
-p {
+.p-text {
     margin: 0px;
     font-family: UbuntuRegular;
     font-size: 0.8rem;
     color: var(--cool-gray);
 }
 
-span {
+.span-text {
     font-family: UbuntuMedium;
     font-size: 0.9rem;
     color: var(--marine-blue);
@@ -138,20 +138,6 @@ img {
     height: 20px;
 }
 
-a {
-    font-family: UbuntuRegular;
-    color: var(--cool-gray);
-    margin: 10px 0px 10px 10px;
-    padding: 5px 20px 10px 20px;
-    font-size: 0.9rem;
-}
-
-a:hover {
-    opacity: 0.9;
-    cursor: pointer;
-}
-
-
 .switch-mon-year input {
     opacity: 0;
     width: 0;
@@ -184,15 +170,15 @@ a:hover {
     border-radius: 50%;
 }
 
-input:checked+.slider {
+.input-checkbox:checked+.slider {
     background-color: var(--marine-blue);
 }
 
-input:focus+.slider {
+.input-checkbox:focus+.slider {
     box-shadow: 0 0 1px var(--marine-blue);
 }
 
-input:checked+.slider:before {
+.input-checkbox:checked+.slider:before {
     -webkit-transform: translateX(15px);
     -ms-transform: translateX(15px);
     transform: translateX(15px);

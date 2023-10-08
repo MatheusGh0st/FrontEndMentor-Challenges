@@ -129,13 +129,15 @@ hr {
     width: 100%;
 }
 
-.btn-container:hover {
-    opacity: 0.9;
-}
-
-.form-submit {
+.form-submit-finish {
     background-color: var(--purplish-blue);
     border: 1px solid var(--purplish-blue);
+    margin: 10px 0px 10px 10px;
+    padding: 5px 20px 5px 20px;
+    height: 40px;
+    border-radius: 10px;
+    color: var(--white);
+    font-family: UbuntuRegular;
 }
 
 .change-link {

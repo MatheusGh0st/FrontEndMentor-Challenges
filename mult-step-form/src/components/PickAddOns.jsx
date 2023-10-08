@@ -1,5 +1,6 @@
 import React from "react";
 import "./PickAddOns.css";
+import { Link } from "react-router-dom";
 
 export default function PickAddOns() {
     return (
@@ -35,8 +36,10 @@ export default function PickAddOns() {
                 </div>
             </div>
             <div className="btn-container">
-                <a>Go Back</a>
-                <button className="form-submit">Next Step</button>
+                <Link to="/select" className="link-go-back-active">Go Back</Link>
+                <Link to="/finish" className="link-next">
+                    <button className="form-submit">Next Step</button>
+                </Link>
             </div>
         </div>
     );

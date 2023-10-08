@@ -1,5 +1,6 @@
 import React from "react";
 import "./FinishUp.css";
+import { Link } from "react-router-dom";
 
 export default function FinishUp() {
     return (
@@ -34,7 +35,6 @@ export default function FinishUp() {
                         <p className="plans-choose">Larger storage</p>
                         <p className="price-plans">+$2/mo</p>
                     </div>
-                    
 
                 </div>
             </div>
@@ -45,10 +45,11 @@ export default function FinishUp() {
             </div>
 
             <div className="btn-container">
-                <a className="back-link">Go Back</a>
-                <button className="form-submit">Confirm</button>
+                <Link to="/pick" className="link-go-back-active">Go Back</Link>
+                <Link to="/thank" className="link-next">
+                    <button className="form-submit">Next Step</button>
+                </Link>
             </div>
-            
         </div>
     );
 }
