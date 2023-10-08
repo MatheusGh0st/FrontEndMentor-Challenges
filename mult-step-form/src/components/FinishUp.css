@@ -1,0 +1,150 @@
+:root {
+    --marine-blue: hsl(213, 96%, 18%);
+    --purplish-blue: hsl(243, 100%, 62%);
+    --pastel-blue: hsl(228, 100%, 84%);
+    --light-blue: hsl(206, 94%, 87%);
+    --strawberry-red: hsl(354, 84%, 57%);
+    --cool-gray: hsl(231, 11%, 63%);
+    --light-gray: hsl(229, 24%, 87%);
+    --magnolia: hsl(217, 100%, 97%);
+    --alabaster: hsl(231, 100%, 99%);
+    --white: hsl(0, 0%, 100%);
+}
+
+@font-face {
+    font-family: UbuntuRegular;
+    src: url("../assets/fonts/Ubuntu-Regular.ttf");
+}
+
+@font-face {
+    font-family: UbuntuMedium;
+    src: url("../assets/fonts/Ubuntu-Medium.ttf");
+}
+
+@font-face {
+    font-family: UbuntuBold;
+    src: url("../assets/fonts/Ubuntu-Bold.ttf");
+}
+
+.finish-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding: 15px 95px 15px 50px;
+}
+
+.text-price {
+    font-size: 0.9rem;
+    font-family: UbuntuMedium;
+    color: var(--marine-blue);
+}
+
+.text-price-total {
+    font-size: 1rem;
+    font-family: UbuntuMedium;
+    color: var(--purplish-blue);
+}
+
+.text-plans {
+    font-size: 0.8rem;
+    font-family: UbuntuMedium;
+    color: var(--marine-blue);
+    padding-bottom: 5px;
+}
+
+.price-plans {
+    color: var(--marine-blue);
+}
+
+hr {
+    background-color: var(--cool-gray);
+    width: 95%;
+}
+
+.title-subtitle-container {
+    width: 100%;
+}
+
+.plans-choose-container {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--alabaster);
+    width: 100%;
+    padding: 10px;
+}
+
+.plan-choose-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: var(--alabaster);
+    width: 100%;
+}
+
+.plans-list-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: stretch;
+    width: 100%;
+    padding: 5px 0px;
+}
+
+.lists-plans-container {
+    background-color: var(--alabaster);
+    width: 100%;
+    padding: 10px 10px;
+    border-radius: 10px;
+    margin: 0px;
+}
+
+.price-text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.list-plans-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+    width: 100%;
+    padding: 5px 10px 5px 10px;
+    background-color: var(--alabaster);
+}
+
+.total-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 20px 0px 20px;
+    width: 100%;
+}
+
+.btn-container:hover {
+    opacity: 0.9;
+}
+
+.form-submit {
+    background-color: var(--purplish-blue);
+    border: 1px solid var(--purplish-blue);
+}
+
+.change-link {
+    margin: 0px;
+    padding: 0px;
+    font-size: 0.7rem;
+    text-decoration: underline;
+}
+
+.change-link:hover {
+    color: var(--marine-blue);
+}
