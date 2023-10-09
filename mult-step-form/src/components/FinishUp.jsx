@@ -2,7 +2,7 @@ import React from "react";
 import "./FinishUp.css";
 import { Link } from "react-router-dom";
 
-export default function FinishUp() {
+export default function FinishUp(props) {
     return (
         <div className="finish-container">
 
@@ -15,7 +15,7 @@ export default function FinishUp() {
                 <div className="plans-choose-container">
                     <div className="plan-choose-container">
                         <span className="text-plans">Arcade (Monthly)</span>
-                        <a className="change-link">Change</a>
+                        <Link to="/select" className="change-link">Change</Link>
                     </div>
                     <div className="price-text-container">
                         <p className="text-price">$9/mo</p>
@@ -27,20 +27,20 @@ export default function FinishUp() {
                 <div className="list-plans-container">
 
                     <div className="plans-list-container">
-                        <p className="plans-choose">Online service</p>
-                        <p className="price-plans">+$1/mo</p>
+                        <p className="plans-choose-text">Online service</p>
+                        <p className="price-plans-text">+$1/mo</p>
                     </div>
 
                     <div className="plans-list-container">
-                        <p className="plans-choose">Larger storage</p>
-                        <p className="price-plans">+$2/mo</p>
+                        <p className="plans-choose-text">Larger storage</p>
+                        <p className="price-plans-text">+$2/mo</p>
                     </div>
 
                 </div>
             </div>
 
             <div className="total-container">
-                <p className="text-plan">Total (per month)</p>
+                <p className="text-total-plan">Total (per month)</p>
                 <span className="text-price-total">+12/mo</span>
             </div>
 

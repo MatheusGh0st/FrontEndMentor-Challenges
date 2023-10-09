@@ -58,6 +58,13 @@
     color: var(--cool-gray);
 }
 
+.p-text-mon {
+    margin: 0px;
+    font-family: UbuntuRegular;
+    font-size: 0.7rem;
+    color: var(--marine-blue);
+}
+
 .span-text {
     font-family: UbuntuMedium;
     font-size: 0.9rem;
@@ -81,7 +88,25 @@
     border-radius: 10px;
     border: 1px solid var(--light-gray);
     width: 115px;
-    height: 130px;
+    min-height: 130px;
+    max-height: 150px;
+}
+
+.plan-container-active {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: stretch;
+    align-content: stretch;
+    margin: 10px 15px 10px 0px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px;
+    border: 1px solid var(--purplish-blue);
+    background-color: var(--magnolia);
+    width: 115px;
+    min-height: 130px;
+    max-height: 150px;
 }
 
 .plan-container> :first-child {
@@ -96,10 +121,7 @@
 .plan-container:hover {
     opacity: 0.8;
     cursor: pointer;
-}
-
-.plan-container:active {
-    background-color: var(--light-blue);
+    border: 1px solid var(--marine-blue);
 }
 
 img {

@@ -31,6 +31,12 @@
     width: 100%;
 }
 
+.p-text-pick {
+    font-family: UbuntuRegular;
+    font-size: 0.8rem;
+    color: var(--purplish-blue);
+}
+
 .option-container {
     display: flex;
     flex-direction: row;
@@ -45,16 +51,26 @@
     margin-bottom: 10px;
 }
 
+.option-container-active {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border: 1px solid var(--purplish-blue);
+    background-color: var(--magnolia);
+    border-radius: 10px;
+    height: 70px;
+    padding: 20px 20px 20px 20px;
+    margin-bottom: 10px;
+}
+
 .option-container:hover {
     opacity: 0.9;
     cursor: pointer;
-    background-color: var(--light-blue);
-    outline: 1px solid var(--purplish-blue);
-}
-
-.option-container:active {
-    background-color: var(--light-blue);
-    outline: 1px solid var(--purplish-blue);
+    background-color: var(--alabaster);
+    border: 1px solid var(--purplish-blue);
 }
 
 .text-option {

@@ -88,6 +88,8 @@
     align-items: flex-end;
     align-content: flex-end;
     height: 110px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .btn-container-info {

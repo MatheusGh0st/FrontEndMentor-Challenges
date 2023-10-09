@@ -60,12 +60,30 @@
 }
 
 hr {
-    background-color: var(--cool-gray);
+    background-color: var(--light-gray);
     width: 95%;
 }
 
 .title-subtitle-container {
     width: 100%;
+}
+
+.plans-choose-text {
+    font-family: UbuntuRegular;
+    color: var(--cool-gray);
+    font-size: 0.8rem;
+}
+
+.text-total-plan {
+    font-family: UbuntuRegular;
+    color: var(--cool-gray);
+    font-size: 0.8rem;
+}
+
+.price-plans-text {
+    font-family: UbuntuRegular;
+    font-size: 0.8rem;
+    color: var(--marine-blue);
 }
 
 .plans-choose-container {
@@ -92,7 +110,8 @@ hr {
     align-items: center;
     align-content: stretch;
     width: 100%;
-    padding: 5px 0px;
+    padding: 0px 0px;
+    height: 30px;
 }
 
 .lists-plans-container {
@@ -110,6 +129,7 @@ hr {
     align-content: center;
 }
 
+
 .list-plans-container {
     display: flex;
     flex-direction: column;
@@ -125,6 +145,7 @@ hr {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     padding: 0px 20px 0px 20px;
     width: 100%;
 }
