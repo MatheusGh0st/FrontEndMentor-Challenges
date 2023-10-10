@@ -4,7 +4,7 @@
 
 # NEWSLETTER-SIGN-UP-FORM (REACT)
 
-![Newsletter-sign-up form coding challenge](./newsletter-sign-up-form-with-success-message/design/desktop-success.jpg)
+![Newsletter-sign-up form coding challenge](./newsletter-sign-up-form-with-success-message/design/desktop-preview.jpg)
 
 # MULTI-STEP-FORM (REACT AND REACT ROUTES)
 
