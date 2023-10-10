@@ -65,6 +65,21 @@
     margin-top: 25px;
 }
 
+.li-number-active {
+    border: 1px solid var(--light-gray);
+    background-color: var(--light-gray);
+    color: var(--marine-blue);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    text-align: center;
+    margin-right: 15px;
+    font-family: UbuntuMedium;
+    font-size: 0.8rem;
+    line-height: 1.8;
+    margin-top: 25px;
+}
+
 .li-step {
     font-family: UbuntuRegular;
     font-size: 0.6rem;

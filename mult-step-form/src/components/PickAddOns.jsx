@@ -2,13 +2,53 @@ import React from "react";
 import "./PickAddOns.css";
 import { Link } from "react-router-dom";
 
-export default function PickAddOns(props) {
+export default function PickAddOns() {
 
     const [pick, setPick] = React.useState({
         pick1: false,
         pick2: false,
         pick3: false
     });
+
+    function filterTrue() {
+        const trueValues = 
+            Object.fromEntries(
+                Object.entries(pick)
+                .filter(([_, value]) => value === true));
+        return trueValues;
+    }
+
+    function selectPicks() {
+        const keysTrue = filterTrue();
+        if (Object.keys(keysTrue).length > 0) {
+            const filteredKeys = Object.keys(servicesObj).filter(key => Object.keys(keysTrue).includes(key));
+            const filteredObj = Object.fromEntries(filteredKeys.map(key => [key, servicesObj[key]]));
+            return filteredObj;
+        }
+
+        return {};
+    }
+
+    const servicesObj = {
+        pick1: {
+            name: "Online service",
+            description: "Acess to multiplayer games",
+            valueMonth: "1",
+            valueYear: "10"
+        },
+        pick2: {
+            name: "Larger storage",
+            description: "Extra 1TB of cloud save",
+            valueMonth: "2",
+            valueYear: "20"
+        },
+        pick3: {
+            name: "Customizable Profile",
+            description: "Custom theme on your profile",
+            valueMonth: "2",
+            valueYear: "20"
+        }
+    }
 
     function setPickServices(event) {
         const name = event.target.getAttribute('name');
@@ -59,7 +99,7 @@ export default function PickAddOns(props) {
             </div>
             <div className="btn-container">
                 <Link to="/select" className="link-go-back-active">Go Back</Link>
-                <Link to={{ pathname: '/select', state: { services: pick } }} className="link-next">
+                <Link to="/finish" state={{ services: selectPicks(), yearOrMonth: false }} className="link-next">
                     <button className="form-submit">Next Step</button>
                 </Link>
             </div>

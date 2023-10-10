@@ -1,8 +1,31 @@
 import React from "react";
 import "./FinishUp.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
-export default function FinishUp(props) {
+export default function FinishUp() {
+    
+    const location = useLocation();
+
+    const { services } = location.state;
+
+    const [isMonOrYear] = React.useState(false);
+
+    const getServicesContent = _ => {
+        let x = 0;
+        let content = [];
+        for (let key in services) {
+            content.push(<div key={x += 1} className="plans-list-container">
+                <p className="plans-choose-text">{services[key].name}</p>
+                {!isMonOrYear ? (
+                    <p className="price-plans-text">+${services[key].valueMonth}/mo</p>
+                ) : (
+                    <p className="price-plans-text">+${services[key].valueYear}/yr</p>
+                )}
+            </div>)
+        }
+        return content;
+    }
+
     return (
         <div className="finish-container">
 
@@ -25,17 +48,9 @@ export default function FinishUp(props) {
                 <hr></hr>
 
                 <div className="list-plans-container">
-
-                    <div className="plans-list-container">
-                        <p className="plans-choose-text">Online service</p>
-                        <p className="price-plans-text">+$1/mo</p>
-                    </div>
-
-                    <div className="plans-list-container">
-                        <p className="plans-choose-text">Larger storage</p>
-                        <p className="price-plans-text">+$2/mo</p>
-                    </div>
-
+                    {
+                        getServicesContent()
+                    }
                 </div>
             </div>
 

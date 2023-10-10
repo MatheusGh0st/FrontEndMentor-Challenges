@@ -13,6 +13,14 @@ export default function SelectPlan() {
         pro: false
     });
 
+    function filterTrue() {
+        const trueValues =
+            Object.fromEntries(
+                Object.entries(plan)
+                    .filter(([_, value]) => value === true));
+        return trueValues;
+    }
+
     const [monOrYear, setMonOrYear] = React.useState(false);
 
     function setPlanSelect(event) {
@@ -20,6 +28,8 @@ export default function SelectPlan() {
         const name = event.target.getAttribute('name');
 
         const plans = ["arcade", "advanced", "pro"];
+
+        const keyTrue = filterTrue();
 
         if (plans.includes(name)) {
             setPlan(prevObj => {
@@ -43,57 +53,57 @@ export default function SelectPlan() {
                 <p className="p-text">You have the option of montly or yearly billing.</p>
             </div>
             <div className="plans-container">
-                <div 
-                    className={`plan-container ${plan.arcade ? "plan-container-active" : ""} `} 
+                <div
+                    className={`plan-container ${plan.arcade ? "plan-container-active" : ""} `}
                     name="arcade"
                     onClick={setPlanSelect}>
                     <img src={iconArcade}></img>
                     <span className="span-text">Arcade</span>
-                    { !monOrYear ? (
+                    {!monOrYear ? (
                         <p className="p-text">$9/mo</p>
                     ) : (
                         <>
                             <p className="p-text">$90/yr</p>
                             <p className="p-text-mon">2 months free</p>
                         </>
-                    ) }
+                    )}
                 </div>
-                <div 
-                    className={`plan-container ${plan.advanced ? "plan-container-active" : ""} `} 
+                <div
+                    className={`plan-container ${plan.advanced ? "plan-container-active" : ""} `}
                     name="advanced"
                     onClick={setPlanSelect}>
                     <img src={iconAdvanced}></img>
                     <span className="span-text">Advanced</span>
-                    { !monOrYear ? (
+                    {!monOrYear ? (
                         <p className="p-text">$12/mo</p>
                     ) : (
                         <>
                             <p className="p-text">$120/yr</p>
                             <p className="p-text-mon">2 months free</p>
                         </>
-                    ) }
-                    
+                    )}
+
                 </div>
-                <div 
+                <div
                     className={`plan-container ${plan.pro ? "plan-container-active" : ""} `}
                     name="pro"
                     onClick={setPlanSelect}>
                     <img src={iconPro}></img>
                     <span className="span-text">Pro</span>
-                    { !monOrYear ? (
+                    {!monOrYear ? (
                         <p className="p-text">$15/mo</p>
                     ) : (
                         <>
                             <p className="p-text">$150/yr</p>
                             <p className="p-text-mon">2 months free</p>
                         </>
-                    ) }
+                    )}
                 </div>
             </div>
             <div className="mon-year-container">
-            <span className="span-text">Monthly</span>
+                <span className="span-text">Monthly</span>
                 <label className="switch-mon-year">
-                    <input className="input-checkbox" type="checkbox" onClick={setMonOrYearPlan}/>
+                    <input className="input-checkbox" type="checkbox" onClick={setMonOrYearPlan} />
                     <span className="slider"></span>
                 </label>
                 <span className="span-text">Yearly</span>
