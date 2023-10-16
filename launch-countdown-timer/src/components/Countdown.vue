@@ -8,11 +8,11 @@ export default {
             hours: 0,
             minutes: 0,
             seconds: 0
-        })
+        });
 
-        return { 
+        return {
             formDate
-        }
+        };
     },
     created() {
         this.countdown();
@@ -20,7 +20,8 @@ export default {
 
     methods: {
         countdown() {
-            const endDate = new Date("Oct 17, 2023 00:00:00")
+            // HARD CODE INPUT DATE
+            const endDate = new Date("Oct 17, 2023 00:00:00");
             const date = new Date().getTime();
 
             const difference = endDate - date;
