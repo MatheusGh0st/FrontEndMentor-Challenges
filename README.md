@@ -16,4 +16,4 @@
 
 # LAUNCH-COUNTDOWN-TIMER (VUE)
 
-![Launch-Countdown-timer from coding challenge]('./launch-countdown-timer/src/design/desktop-design.jpg')
+![Launch-Countdown-timer from coding challenge](./launch-countdown-timer/src/design/desktop-design.jpg)
