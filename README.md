@@ -13,3 +13,7 @@
 # AGE-CALCULATOR (REACT)
 
 ![Age-Calculator form coding challenge](./age-calculator-app/design/desktop-completed.jpg)
+
+# LAUNCH-COUNTDOWN-TIMER (VUE)
+
+![Launch-Countdown-timer from coding challenge]('./launch-countdown-timer/src/design/desktop-design.jpg')
