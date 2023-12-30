@@ -12,7 +12,7 @@ export default function Checkbox(props) {
     return (
         <div className="checkbox-container">
             <input className="input-checkbox" type="checkbox" onClick={setCheckList} />
-            <span> className="span-checkbox"{props.title}</span>
+            <span className="span-checkbox">{props.title}</span>
         </div>
     )
 }

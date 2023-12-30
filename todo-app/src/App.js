@@ -1,10 +1,11 @@
 import './App.css';
-import Checkbox from './components/Checkbox';
+// import Checkbox from './components/Checkbox';
+import FormCheckBox from './components/FormCheckBox';
 
 function App() {
   return (
     <div className="App">
-      <Checkbox title="AABAS"></Checkbox>
+      <FormCheckBox></FormCheckBox>
     </div>
   );
 }
