@@ -1,18 +1,16 @@
 import React from "react";
 
-export default function Checkbox(props) {
-    const [isCheck, setCheck] = React.useState(false);
-
-    function setCheckList() {
-        setCheck(prevObj => {
-            return !prevObj
-        });
-    }
-
-    return (
-        <div className="checkbox-container">
-            <input className="input-checkbox" type="checkbox" onClick={setCheckList} />
-            <span className="span-checkbox">{props.title}</span>
-        </div>
-    )
+export default function Checkbox({ title, check, completed, onChange }) {
+  return (
+    <div className="todo-checkbox">
+      <input
+        type="checkbox"
+        checked={check}
+        onChange={onChange}
+        aria-label={title}
+      />
+      <span className={completed ? "completed" : ""}>{title}</span>
+    </div>
+  );
 }
+
