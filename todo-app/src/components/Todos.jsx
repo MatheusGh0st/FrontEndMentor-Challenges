@@ -28,7 +28,7 @@ export default function FormCheckBox() {
 
   const handleKeyUp = (e) => {
     if (e.key === 'Enter' && formTitle.trim() !== "") {
-      setTodos(prevTodos => [...prevTodos, { id: generateId(prevTodos), title: formTitle, check: false, completed: false }]);
+      setTodos(prevTodos => [...prevTodos, { id: generateId(prevTodos), title: formTitle, check: false }]);
       setFormTitle(""); // Clear the form after adding a new todo
     }
   };
@@ -36,7 +36,7 @@ export default function FormCheckBox() {
   const handleCheckboxChange = (id) => {
     setTodos(prevTodos =>
       prevTodos.map(todo =>
-        todo.id === id ? { ...todo, check: !todo.check } : todo
+        todo.id === id ? { ...todo, check: !todo.check, completed: !todo.completed } : todo
       )
     );
   };
