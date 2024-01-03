@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Checkbox from "./Checkbox";
 
 export default function FormCheckBox() {
   const [todos, setTodos] = useState([]);
   const [formTitle, setFormTitle] = useState("");
   const [btnState, setBtnState] = useState({ all: true, active: false, completed: false });
+  const [count, setCount] = useState(0);
 
   const handleInputChange = (e) => {
     setFormTitle(e.target.value);
@@ -16,7 +17,7 @@ export default function FormCheckBox() {
     return Math.max(...ids) + 1;
   }
 
-  const defaultBtnState = { all: false, active: false, completed: false };
+  const defaultBtnState = { all: false, active: false, completed: false, clear: false };
 
   const handleBtnChange = (e) => {
     const { name } = e.target;
@@ -29,6 +30,7 @@ export default function FormCheckBox() {
   const handleKeyUp = (e) => {
     if (e.key === 'Enter' && formTitle.trim() !== "") {
       setTodos(prevTodos => [...prevTodos, { id: generateId(prevTodos), title: formTitle, check: false }]);
+      handleCount();
       setFormTitle(""); // Clear the form after adding a new todo
     }
   };
@@ -40,6 +42,14 @@ export default function FormCheckBox() {
       )
     );
   };
+
+  const handleCount = () => {
+    setCount(prevCount => {
+      return prevCount + 1;
+    });
+  }
+
+  useEffect(() => {}, [count]);
 
   return (
     <>
@@ -59,6 +69,7 @@ export default function FormCheckBox() {
           } else if (btnState.completed) {
             return todo.completed;
           }
+          return false;
         }).map((todo, index) => (
           <Checkbox
             key={index}
@@ -70,6 +81,7 @@ export default function FormCheckBox() {
         ))}
       </div>
       <div className="todos-btn">
+        <span>{count}</span>
         <button
           name="all"
           type="button"
@@ -85,6 +97,11 @@ export default function FormCheckBox() {
           type="button"
           onClick={handleBtnChange}
         >Completed</button>
+        <button
+          name="completed"
+          type="button"
+          onClick={handleBtnChange}
+        >Clear Completed</button>
       </div>
     </>
   );
