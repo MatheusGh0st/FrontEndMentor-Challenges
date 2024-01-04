@@ -29,7 +29,7 @@ export default function FormCheckBox() {
 
   const handleKeyUp = (e) => {
     if (e.key === 'Enter' && formTitle.trim() !== "") {
-      setTodos(prevTodos => [...prevTodos, { id: generateId(prevTodos), title: formTitle, check: false }]);
+      setTodos(prevTodos => [...prevTodos, { id: generateId(prevTodos), title: formTitle, check: false, completed: false }]);
       handleCount();
       setFormTitle(""); // Clear the form after adding a new todo
     }
@@ -44,8 +44,18 @@ export default function FormCheckBox() {
   };
 
   const handleCount = () => {
-    setCount(prevCount => {
-      return prevCount + 1;
+    setCount(todos.filter(todo => !todo.completed).length + 1);
+  }
+
+  const handleCountClear = () => {
+    setCount(todos.filter(todo => !todo.completed).length);
+  }
+
+  const handleClearTodo = () => {
+    setTodos(prevTodos => {
+      let notCompleted = prevTodos.filter(todo => !todo.completed);
+      handleCountClear();
+      return notCompleted;
     });
   }
 
@@ -98,9 +108,9 @@ export default function FormCheckBox() {
           onClick={handleBtnChange}
         >Completed</button>
         <button
-          name="completed"
+          name="clear"
           type="button"
-          onClick={handleBtnChange}
+          onClick={handleClearTodo}
         >Clear Completed</button>
       </div>
     </>

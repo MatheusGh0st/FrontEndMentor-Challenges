@@ -13,4 +13,3 @@ export default function Checkbox({ title, check, completed, onChange }) {
     </div>
   );
 }
-
