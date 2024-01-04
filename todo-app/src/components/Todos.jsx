@@ -1,11 +1,25 @@
 import React, { useEffect, useState } from "react";
 import Checkbox from "./Checkbox";
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import { v4 as uuidv4 } from 'uuid';
 
 export default function FormCheckBox() {
   const [todos, setTodos] = useState([]);
   const [formTitle, setFormTitle] = useState("");
   const [btnState, setBtnState] = useState({ all: true, active: false, completed: false });
   const [count, setCount] = useState(0);
+
+  const onDragEnd = (result) => {
+    if (!result.destination) {
+      return;
+    }
+  
+    const items = Array.from(todos);
+    const [reorderedItem] = items.splice(result.source.index, 1);
+    items.splice(result.destination.index, 0, reorderedItem);
+  
+    setTodos(items);
+  };
 
   const handleInputChange = (e) => {
     setFormTitle(e.target.value);
@@ -16,6 +30,8 @@ export default function FormCheckBox() {
     const ids = array.map((item) => item.id);
     return Math.max(...ids) + 1;
   }
+
+  const droppableId = uuidv4().toString();
 
   const defaultBtnState = { all: false, active: false, completed: false, clear: false };
 
@@ -59,6 +75,18 @@ export default function FormCheckBox() {
     });
   }
 
+  const handleCountRemove = () => {
+    setCount(todos.filter(todo => !todo.completed).length - 1);
+  }
+
+  const handleRemoveTodo = (id) => {
+    setTodos(prevTodos => {
+      let notMatch = prevTodos.filter(todo => !(todo.id === id));
+      return notMatch;
+    });
+    handleCountRemove();
+  };
+
   useEffect(() => {}, [count]);
 
   return (
@@ -70,25 +98,41 @@ export default function FormCheckBox() {
           onKeyUp={handleKeyUp}
           placeholder="Create a new todo..."
         />
-
-        {todos.filter(todo => {
-          if (btnState.all) {
-            return true;
-          } else if (btnState.active) {
-            return todo.check;
-          } else if (btnState.completed) {
-            return todo.completed;
-          }
-          return false;
-        }).map((todo, index) => (
-          <Checkbox
-            key={index}
-            title={todo.title}
-            check={todo.check}
-            completed={todo.completed}
-            onChange={() => handleCheckboxChange(todo.id)}
-          />
-        ))}
+        
+        <DragDropContext onDragEnd={onDragEnd}>
+          
+          <Droppable droppableId={droppableId}>
+            {(provided) => (
+              <div {...provided.droppableProps} ref={provided.innerRef}>
+                {todos.filter(todo => {
+                  if (btnState.all) {
+                    return true;
+                  } else if (btnState.active) {
+                    return todo.check;
+                  } else if (btnState.completed) {
+                    return todo.completed;
+                  }
+                  return false;
+                }).map((todo, index) => (
+                  <Draggable key={todo.id} draggableId={todo.id.toString()} index={index}>
+                    {(provided) => (
+                      <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                        <Checkbox
+                          title={todo.title}
+                          check={todo.check}
+                          completed={todo.completed}
+                          onChange={() => handleCheckboxChange(todo.id)}
+                        />
+                        <div className="remove-todo" onClick={() => handleRemoveTodo(todo.id)}>X</div>
+                      </div>
+                    )}
+                  </Draggable>
+                ))}
+                {provided.placeholder}
+              </div>
+            )}
+          </Droppable>
+        </DragDropContext>
       </div>
       <div className="todos-btn">
         <span>{count}</span>
