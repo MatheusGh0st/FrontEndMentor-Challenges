@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Checkbox from "./Checkbox";
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import { v4 as uuidv4 } from 'uuid';
+import "./Todos.css";
 
 export default function FormCheckBox() {
   const [todos, setTodos] = useState([]);
@@ -91,16 +92,15 @@ export default function FormCheckBox() {
 
   return (
     <>
-      <div className="todo-checkbox-container">
+      <div className="todo-app-container">
         <input
+          className="input-checkbox"
           value={formTitle}
           onChange={handleInputChange}
           onKeyUp={handleKeyUp}
           placeholder="Create a new todo..."
         />
-        
         <DragDropContext onDragEnd={onDragEnd}>
-          
           <Droppable droppableId={droppableId}>
             {(provided) => (
               <div {...provided.droppableProps} ref={provided.innerRef}>
@@ -116,7 +116,7 @@ export default function FormCheckBox() {
                 }).map((todo, index) => (
                   <Draggable key={todo.id} draggableId={todo.id.toString()} index={index}>
                     {(provided) => (
-                      <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                      <div className="todo-list-container" ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
                         <Checkbox
                           title={todo.title}
                           check={todo.check}
@@ -133,29 +133,34 @@ export default function FormCheckBox() {
             )}
           </Droppable>
         </DragDropContext>
-      </div>
-      <div className="todos-btn">
-        <span>{count}</span>
-        <button
-          name="all"
-          type="button"
-          onClick={handleBtnChange}
-        >All</button>
-        <button
-          name="active"
-          type="button"
-          onClick={handleBtnChange}
-        >Active</button>
-        <button
-          name="completed"
-          type="button"
-          onClick={handleBtnChange}
-        >Completed</button>
-        <button
-          name="clear"
-          type="button"
-          onClick={handleClearTodo}
-        >Clear Completed</button>
+        <br className="break-line-checkbox"></br>
+        <div className="todos-btn">
+          <span>{count} items left</span>
+          <button
+            className="btn-control-todos"
+            name="all"
+            type="button"
+            onClick={handleBtnChange}
+          >All</button>
+          <button
+            className="btn-control-todos"
+            name="active"
+            type="button"
+            onClick={handleBtnChange}
+          >Active</button>
+          <button
+            className="btn-control-todos"
+            name="completed"
+            type="button"
+            onClick={handleBtnChange}
+          >Completed</button>
+          <button
+            className="btn-control-todos"
+            name="clear"
+            type="button"
+            onClick={handleClearTodo}
+          >Clear Completed</button>
+        </div>
       </div>
     </>
   );

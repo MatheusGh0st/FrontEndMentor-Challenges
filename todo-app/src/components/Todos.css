@@ -1,0 +1,65 @@
+:root {
+    --very-dark-blue: hsl(235, 21%, 11%);
+    --very-dark-desaturated-blue: hsl(235, 24%, 19%);
+    --light-grayish-blue: hsl(234, 39%, 85%);
+    --light-grayish-blue: (hover): hsl(236, 33%, 92%);
+    --dark-grayish-blue: hsl(234, 11%, 52%);
+    --very-dark-grayish-blue: hsl(233, 14%, 35%);
+    --very-dark-grayish-blue: hsl(237, 14%, 26%);
+    --bright-blue: hsl(220, 98%, 61%);
+    --check-background-linear-radient: hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+    --very-light-gray: hsl(0, 0%, 98%);
+    --very-light-grayish-blue: hsl(236, 33%, 92%);
+    --light-grayish-blue: hsl(233, 11%, 84%);
+    --dark-grayish-blue: hsl(236, 9%, 61%);
+    --very-dark-grayish-blue: hsl(235, 19%, 35%);
+}
+
+
+/* @font-face { */
+    /* font-family: ; */
+    /* src: url(""); */
+/* } */
+
+
+.todo-app-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: stretch;
+}
+
+.todo-list-container {
+    display: flex;
+    width: 480px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: flex-start;
+}
+
+.input-checkbox {
+    display: flex;
+    width: 480px;
+}
+
+.todos-btn {
+    display: flex;
+    width: 500px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: flex-start;
+}
+
+.btn-control-todos {
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+}
