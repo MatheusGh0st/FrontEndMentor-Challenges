@@ -53,6 +53,7 @@ export default function FormCheckBox() {
   };
 
   const handleCheckboxChange = (id) => {
+    
     setTodos(prevTodos =>
       prevTodos.map(todo =>
         todo.id === id ? { ...todo, check: !todo.check, completed: !todo.completed } : todo
@@ -77,7 +78,7 @@ export default function FormCheckBox() {
   }
 
   const handleCountRemove = () => {
-    setCount(todos.filter(todo => !todo.completed).length - 1);
+    setCount(todos.filter(todo => todo.title).length - 1);
   }
 
   const handleRemoveTodo = (id) => {
@@ -93,17 +94,23 @@ export default function FormCheckBox() {
   return (
     <>
       <div className="todo-app-container">
-        <input
-          className="input-checkbox"
-          value={formTitle}
-          onChange={handleInputChange}
-          onKeyUp={handleKeyUp}
-          placeholder="Create a new todo..."
-        />
+        <div className="input-todo-checkbox">
+          <div className="icon-check-container">
+            <div className="icon-check-circle">
+            </div>
+            <input
+                className="input-checkbox"
+                value={formTitle}
+                onChange={handleInputChange}
+                onKeyUp={handleKeyUp}
+                placeholder="Create a new todo..."
+              />
+          </div>
+        </div>
         <DragDropContext onDragEnd={onDragEnd}>
           <Droppable droppableId={droppableId}>
             {(provided) => (
-              <div {...provided.droppableProps} ref={provided.innerRef}>
+              <div className="checkbox-container" {...provided.droppableProps} ref={provided.innerRef}>
                 {todos.filter(todo => {
                   if (btnState.all) {
                     return true;
@@ -116,14 +123,19 @@ export default function FormCheckBox() {
                 }).map((todo, index) => (
                   <Draggable key={todo.id} draggableId={todo.id.toString()} index={index}>
                     {(provided) => (
-                      <div className="todo-list-container" ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                        <Checkbox
-                          title={todo.title}
-                          check={todo.check}
-                          completed={todo.completed}
-                          onChange={() => handleCheckboxChange(todo.id)}
-                        />
-                        <div className="remove-todo" onClick={() => handleRemoveTodo(todo.id)}>X</div>
+                      <div className="item-list-containter">
+                        <div className="icon-check-circle" onClick={ (e) => e.target.className = e.target.className === "icon-check-svg-disable" && !todo.check ? "icon-check-svg-active" : "icon-check-svg-disable" }>
+                          <div className="todo-list-container" ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                          <Checkbox
+                            className="todo-checkbox-element"
+                            title={todo.title}
+                            check={todo.check}
+                            completed={todo.completed}
+                            onChange={() => handleCheckboxChange(todo.id)}
+                          />
+                          <div className="remove-todo" onClick={() => handleRemoveTodo(todo.id)}>X</div>
+                          </div>
+                        </div>
                       </div>
                     )}
                   </Draggable>
@@ -161,6 +173,7 @@ export default function FormCheckBox() {
             onClick={handleClearTodo}
           >Clear Completed</button>
         </div>
+        <span className="span-drag-drop">Drag and drop to reorder list</span>
       </div>
     </>
   );

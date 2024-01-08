@@ -15,20 +15,14 @@
     --very-dark-grayish-blue: hsl(235, 19%, 35%);
 }
 
-
-/* @font-face { */
-    /* font-family: ; */
-    /* src: url(""); */
-/* } */
-
-
 .todo-app-container {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    align-content: stretch;
+    align-content: center;
+    max-width: 195vh;
 }
 
 .todo-list-container {
@@ -44,6 +38,25 @@
 .input-checkbox {
     display: flex;
     width: 480px;
+    padding-top: 5px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+}
+
+.icon-check-circle {
+    align-self: center;
+    margin-right: 8px;
+    border: solid 1px var(--dark-grayish-blue);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+
+.todo-checkbox-element {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 .todos-btn {
@@ -54,6 +67,11 @@
     justify-content: space-around;
     align-items: center;
     align-content: flex-start;
+    color: var(--dark-grayish-blue);
+}
+
+.item-list-containter {
+    width: 510px;
 }
 
 .btn-control-todos {
@@ -62,4 +80,54 @@
     margin:0;
     padding:0;
     cursor: pointer;
+    color: var(--dark-grayish-blue);
+}
+
+.span-drag-drop {
+    color: var(--dark-grayish-blue);
+}
+
+.input-todo-checkbox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: flex-start;
+    align-content: flex-start;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.checkbox-icon-input {
+    cursor: default;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.icon-check-svg-active {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: black;
+    fill: #2ecc71;
+}
+
+.icon-check-svg-disable {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: none;
+    fill: #ffffff;
+}
+
+.icon-check-container {
+    display: flex;
+    padding: 0px 10px 0px 10px;
+    flex-direction: row;
+    border: solid 1px;
+    height: 45px;
+    border-radius: 5px;
 }
