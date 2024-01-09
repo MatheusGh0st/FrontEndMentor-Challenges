@@ -1,18 +1,18 @@
 import React from "react";
 import iconCheck from "../images/icon-check.svg";
+import { Checkbox } from 'pretty-checkbox-react';
 
-export default function Checkbox({ title, check, completed, onChange }) {
+export default function CustomCheckbox({ title, check, completed, onChange }) {
   return (
     <>
       <img className={ check ? "icon-check-svg-active" : "icon-check-svg-disable"} src={iconCheck} alt="img"></img>
-      <input
-        className="todo-checkbox-element"
-        type="checkbox"
+      <Checkbox
         checked={check}
         onChange={onChange}
         aria-label={title}
-      />
-      <span className={completed ? "completed" : ""}>{title}</span>
+        >
+        <span className={completed ? "completed" : ""}>{title}</span>
+      </Checkbox>
     </>
   );
 }

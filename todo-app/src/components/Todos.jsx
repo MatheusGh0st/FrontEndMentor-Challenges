@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Checkbox from "./Checkbox";
+import TodoList from "./TodoList";
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import { v4 as uuidv4 } from 'uuid';
 import "./Todos.css";
+import CustomCheckbox from "./Checkbox";
 
 export default function FormCheckBox() {
   const [todos, setTodos] = useState([]);
@@ -124,9 +125,8 @@ export default function FormCheckBox() {
                   <Draggable key={todo.id} draggableId={todo.id.toString()} index={index}>
                     {(provided) => (
                       <div className="item-list-containter">
-                        <div className="icon-check-circle" onClick={ (e) => e.target.className = e.target.className === "icon-check-svg-disable" && !todo.check ? "icon-check-svg-active" : "icon-check-svg-disable" }>
                           <div className="todo-list-container" ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                          <Checkbox
+                          <CustomCheckbox
                             className="todo-checkbox-element"
                             title={todo.title}
                             check={todo.check}
@@ -134,7 +134,6 @@ export default function FormCheckBox() {
                             onChange={() => handleCheckboxChange(todo.id)}
                           />
                           <div className="remove-todo" onClick={() => handleRemoveTodo(todo.id)}>X</div>
-                          </div>
                         </div>
                       </div>
                     )}
@@ -146,34 +145,7 @@ export default function FormCheckBox() {
           </Droppable>
         </DragDropContext>
         <br className="break-line-checkbox"></br>
-        <div className="todos-btn">
-          <span>{count} items left</span>
-          <button
-            className="btn-control-todos"
-            name="all"
-            type="button"
-            onClick={handleBtnChange}
-          >All</button>
-          <button
-            className="btn-control-todos"
-            name="active"
-            type="button"
-            onClick={handleBtnChange}
-          >Active</button>
-          <button
-            className="btn-control-todos"
-            name="completed"
-            type="button"
-            onClick={handleBtnChange}
-          >Completed</button>
-          <button
-            className="btn-control-todos"
-            name="clear"
-            type="button"
-            onClick={handleClearTodo}
-          >Clear Completed</button>
-        </div>
-        <span className="span-drag-drop">Drag and drop to reorder list</span>
+      <TodoList count={count} handleBtnChange={handleBtnChange} handleClearTodo={handleClearTodo} />
       </div>
     </>
   );
