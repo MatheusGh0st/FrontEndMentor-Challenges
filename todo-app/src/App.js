@@ -9,9 +9,11 @@ function App() {
   const themeClass = themeLight ? "light" : "dark";
 
   return (
-    <div className={`App ${themeClass}`}>
-      <Header themeLight={themeLight} setThemeLight={setThemeLight} />
-      <Todos />
+    <div className={`wrapper ${themeClass}`}>
+      <div className='container'>
+        <Header themeLight={themeLight} setThemeLight={setThemeLight} />
+        <Todos />
+      </div>
     </div>
   );
 }
