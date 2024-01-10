@@ -1,6 +1,5 @@
 import SwitchToDarkIcon from "../images/icon-moon.svg";
 import SwitchToLightIcon from "../images/icon-sun.svg";
-import './Header.css';
 
 const Header = ({ themeLight, setThemeLight }) => {
   const switchThemeIcon = themeLight ? SwitchToDarkIcon : SwitchToLightIcon;
