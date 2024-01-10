@@ -14,6 +14,10 @@
 
 ![Age-Calculator form coding challenge](./age-calculator-app/design/desktop-completed.jpg)
 
+# TODO-APP (REACT)
+
+![Todo-App form codding challenge](./todo-app/design/desktop-preview.jpg)
+
 # VUE PROJECTS
 
 # LAUNCH-COUNTDOWN-TIMER (VUE)
